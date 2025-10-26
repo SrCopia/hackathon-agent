@@ -6,6 +6,7 @@ import { DummyEndpoint } from "./endpoints/dummyEndpoint";
 import { productRouter } from "./endpoints/products/router";
 import { SupplierRouter } from "./endpoints/suppliers/router";
 import { AlertRouter } from "./endpoints/alerts/router";
+import { OrderRouter } from "./endpoints/order/router";
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
@@ -48,6 +49,7 @@ openapi.route("/tasks", tasksRouter);
 openapi.route("/products", productRouter);
 openapi.route("/suppliers", SupplierRouter);
 openapi.route("/alerts", AlertRouter);
+openapi.route("/orders", OrderRouter); // Temporary: Using AlertRouter for orders
 
 // Register other endpoints
 openapi.post("/dummy/:slug", DummyEndpoint);
