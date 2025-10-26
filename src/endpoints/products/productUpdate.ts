@@ -8,7 +8,6 @@ export class ProductUpdate extends D1UpdateEndpoint<HandleArgs> {
 		model: ProductModel,
 		fields: ProductModel.schema.pick({
 			name: true,
-			slug: true,
 			description: true,
       price: true,
       stock: true,
@@ -27,7 +26,7 @@ export class ProductUpdate extends D1UpdateEndpoint<HandleArgs> {
         const embedding = await generateEmbedding(openaiClient, textToEmbed);
 
         const vector: VectorizeVector = {
-          id: `product_${updatedProduct.slug}`,
+          id: `product_${updatedProduct.id}`,
           values: embedding,
           metadata: {
             name: updatedProduct.name,
@@ -39,7 +38,7 @@ export class ProductUpdate extends D1UpdateEndpoint<HandleArgs> {
 
         await env.VECTORIZE.upsert([vector]);
         console.log(
-          `VECTORIZE upsert success for updated task: ${updatedProduct.slug}`
+          `VECTORIZE upsert success for updated task: ${updatedProduct.id}`
         );
       }
     } catch (error) {

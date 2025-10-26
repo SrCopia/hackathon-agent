@@ -45,14 +45,14 @@
 		{
 			"binding": "DB",
 			"database_name": "openapi-template-db",
-			"database_id": "0393bc15-8dbe-4afd-aaa2-2527b641121b"
+			"database_id": "d1d617e5-4aa3-4873-a7c0-8c170f5e0282"
 		}
 	],
 	"vectorize": [
 		{
-			"binding": "search-index",
-			"index_name": "products-search-index",
-			"remote": true,
+			"binding": "VECTORIZE",
+			"index_name": "product-search-index",
+			"remote": true
 		}
 	]
 }

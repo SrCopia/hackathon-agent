@@ -38,7 +38,6 @@ export class ProductSearch extends OpenAPIRoute<HandleArgs> {
                   name: z.string(),
                   description: z.string(),
                   category: z.string(),
-                  slug: z.string(),
                   score: z.number(),
                   metadata: z.record(z.any()),
                 })
@@ -117,7 +116,6 @@ export class ProductSearch extends OpenAPIRoute<HandleArgs> {
           id: match.id,
           name: match.metadata?.name || "",
           description: match.metadata?.description || "",
-          slug: match.metadata?.slug || "",
           score: match.score,
           metadata: match.metadata || {},
         }));

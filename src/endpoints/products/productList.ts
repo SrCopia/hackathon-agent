@@ -7,6 +7,6 @@ export class ProductList extends D1ListEndpoint<HandleArgs> {
 		model: ProductModel,
 	};
 
-	searchFields = ["name", "slug", "description", "category"];
+	searchFields = ["name", "description", "category"];
 	defaultOrderBy = "id DESC";
 }
