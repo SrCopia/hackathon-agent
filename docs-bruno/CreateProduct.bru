@@ -1,0 +1,28 @@
+meta {
+  name: CreateProduct
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8787/products
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "cocacola",
+    "slug": "cocacola",
+    "description": "fresca",
+    "price": 2000,
+    "stock": 4,
+    "category": "bebida",
+    "image": "link"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
