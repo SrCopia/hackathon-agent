@@ -1,0 +1,26 @@
+meta {
+  name: create-supplier
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8787/suppliers
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "pepito",
+    "rut": "123456-7",
+    "phoneNumber": "12345568",
+    "email": "pepito@mail.com",
+    "address": "un texto cualquiera"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
